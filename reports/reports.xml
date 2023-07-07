@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report
+        id="account_payment_voucher_report"
+        model="account.payment"
+        string="Payment Vouchersss"
+        report_type="qweb-pdf"
+        file="payment_voucher.payment_voucher_report"
+        name="payment_voucher.payment_voucher_report"
+    />
+
+
+    </data>
+</odoo>

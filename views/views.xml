@@ -1,0 +1,22 @@
+<odoo>
+  <data>
+   <!-- Inherit Form View to Modify it -->
+   <record id="account_payment_form_inherit" model="ir.ui.view">
+       <field name="name">account.payment.form.inherit</field>
+       <field name="model">account.payment</field>
+       <field name="inherit_id" ref="account.view_account_payment_form"/>
+       <field name="arch" type="xml">
+
+           <xpath expr="//button[@name='action_post']" position="before">
+             <button name="fc_approve" string="FC Approval" type="object" class="oe_highlight" attrs="{'invisible': [('state', '!=', 'draft')]}" data-hotkey="v"/>
+               <button name="cfo_approve" string="CFO Approval" type="object" class="oe_highlight" attrs="{'invisible': [('state', '!=', 'fc_control')]}" data-hotkey="v"/>
+               <!-- Add your fields or attributes here -->
+           </xpath>
+           <xpath expr="//button[@name='action_post']" position="replace">
+                    <button name="action_post" string="Post" type="object" class="oe_highlight" attrs="{'invisible': [('state', '!=', 'cfo_approve')]}" data-hotkey="v"/>
+           </xpath>
+
+       </field>
+   </record>
+  </data>
+</odoo>

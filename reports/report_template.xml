@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+    <template id="report_payment_voucher_layout">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <t t-set="doc" t-value="doc"/>
+<!--                <t t-set="doc" t-value="record"/>-->
+                <div class="page">
+                    <!-- Top section -->
+                    <div class="row">
+                        <style>
+                            .align-right {
+                            text-align: right;
+                            }
+                        </style>
+                        <div class="col-xs-6">
+                            <p><strong>Date:</strong> <span t-field="doc.date"/></p>
+                            <p><strong>Payee:</strong> <span t-field="doc.partner_id.name"/></p>
+                        </div>
+                        <div class="col-xs-6 ml-auto">
+                            <p><strong>Voucher Number:</strong> <span t-field="doc.name"/></p>
+                            <p><strong>Payment Account:</strong> <span t-field="doc.journal_id"/></p>
+                            <p><strong>Memo:</strong> <span t-field="doc.ref"/></p>
+                        </div>
+                    </div>
+
+                    <!-- Middle section -->
+                    <div class="row">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Payment For</th>
+                                    <th>Amount</th>
+                                </tr>
+                            </thead>
+                            <style>
+                                .row-height {
+                                height: 250px;
+                                }
+                            </style>
+
+                            <tbody>
+                                <tr class="row-height">
+                                    <td><span t-field="doc.ref"/></td>
+                                    <td><span t-field="doc.amount"/></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Bottom section -->
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <p><strong>Prepared By:</strong> <span t-field="doc.create_uid.name"/></p>
+                        </div>
+                        <div class="col-xs-6 ml-auto">
+                            <p><strong>Approved By:</strong> <span t-field="doc.create_uid.name"/></p>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <template id="payment_voucher.payment_voucher_report">
+        <t t-call="payment_voucher.report_payment_voucher_layout">
+            <t t-foreach="docs" t-as="doc">
+        </t>
+        </t>
+    </template>
+
+
+
+
+    </data>
+</odoo>
