@@ -19,7 +19,7 @@
                             <p><strong>Date:</strong> <span t-field="doc.date"/></p>
                             <p><strong>Payee:</strong> <span t-field="doc.partner_id.name"/></p>
                         </div>
-                        <div class="col-xl-6">
+                        <div class="col-xl-2">
                             <p><strong>Voucher Number:</strong> <span t-field="doc.name"/></p>
                             <p><strong>Payment Account:</strong> <span t-field="doc.journal_id"/></p>
                             <p><strong>Memo:</strong> <span t-field="doc.ref"/></p>
