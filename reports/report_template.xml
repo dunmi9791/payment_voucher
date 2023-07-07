@@ -15,7 +15,7 @@
 <!--                            text-align: right;-->
 <!--                            }-->
 <!--                        </style>-->
-                        <div class="col-xs-6 text-left" >
+                        <div class="col-xs-6 text-left style=width: 60%;" >
                             <p><strong>Date:</strong> <span t-field="doc.date"/></p>
                             <p><strong>Payee:</strong> <span t-field="doc.partner_id.name"/></p>
                         </div>
