@@ -15,14 +15,14 @@
 <!--                            text-align: right;-->
 <!--                            }-->
 <!--                        </style>-->
-                        <div class="col-xs-6 text-left style=width: 60%;" >
+                        <div class="col-xs-6 text-left" style="width: 60%;" >
                             <p><strong>Date:</strong> <span t-field="doc.date"/></p>
                             <p><strong>Payee:</strong> <span t-field="doc.partner_id.name"/></p>
                         </div>
                         <div class="col-xs-6">
 
                         </div>
-                        <div class="col-xs-6 text-right">
+                        <div class="col-xs-6 text-right" style="width: 40%;" >
                             <p><strong>Voucher Number:</strong> <span t-field="doc.name"/></p>
                             <p><strong>Payment Account:</strong> <span t-field="doc.journal_id"/></p>
                             <p><strong>Memo:</strong> <span t-field="doc.ref"/></p>
