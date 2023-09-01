@@ -8,8 +8,8 @@
        <field name="arch" type="xml">
 
            <xpath expr="//button[@name='action_post']" position="before">
-             <button name="fc_approve" string="FC Approval" type="object" class="oe_highlight" attrs="{'invisible': [('state', '!=', 'draft')]}" data-hotkey="v"/>
-               <button name="cfo_approve" string="CFO Approval" type="object" class="oe_highlight" attrs="{'invisible': [('state', '!=', 'fc_control')]}" data-hotkey="v"/>
+             <button name="fc_approve" string="Approval" type="object" class="oe_highlight" attrs="{'invisible': [('state', '!=', 'draft')]}" data-hotkey="v"/>
+               <button name="cfo_approve" string="Check" type="object" class="oe_highlight" attrs="{'invisible': [('state', '!=', 'fc_control')]}" data-hotkey="v"/>
                <!-- Add your fields or attributes here -->
            </xpath>
            <xpath expr="//button[@name='action_post']" position="replace">

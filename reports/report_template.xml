@@ -59,7 +59,10 @@
                             <p><strong>Prepared By:</strong> <span t-field="doc.create_uid.name"/></p>
                         </div>
                         <div class="col-xs-6 ml-auto">
-                            <p><strong>Approved By:</strong> <span t-field="doc.create_uid.name"/></p>
+                            <p><strong>Approved By:</strong> <span t-field="doc.approve_uid.name"/></p>
+                        </div>
+                        <div class="col-xs-6 ml-auto">
+                            <p><strong>Checked By:</strong> <span t-field="doc.check_uid.name"/></p>
                         </div>
                     </div>
                 </div>

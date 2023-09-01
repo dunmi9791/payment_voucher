@@ -12,15 +12,24 @@ class AccountMove(models.Model):
 class AccountPayment(models.Model):
     _inherit = 'account.payment'
 
+    approve_uid = fields.Many2one(comodel_name='res.users', string='Approved By', required=False)
+    check_uid = fields.Many2one(comodel_name='res.users', string='Checked By', required=False)
+
     def fc_approve(self):
+        user = self.env.user
+        user_id = user.id
         self.write({
             'state': 'fc_control',
         })
+        self.approve_uid = user_id
 
     def cfo_approve(self):
+        user = self.env.user
+        user_id = user.id
         self.write({
             'state': 'cfo_approve',
         })
+        self.check_uid = user_id
 
 
 
