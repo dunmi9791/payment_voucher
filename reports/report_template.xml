@@ -34,7 +34,7 @@
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
-                                    <th>Payment For</th>
+                                    <th>Description/Particulars</th>
                                     <th>Amount</th>
                                 </tr>
                             </thead>
@@ -42,29 +42,48 @@
                                 .row-height {
                                 height: 250px;
                                 }
+                                .foot-height {
+                                height: 50px;
+                                }
                             </style>
 
                             <tbody>
                                 <tr class="row-height">
-                                    <td><span t-field="doc.ref"/></td>
+                                    <td><span t-field="doc.narration"/></td>
+                                    <td><span t-field="doc.amount"/></td>
+                                </tr>
+                                <tr class="foot-height">
+                                    <td>Total</td>
                                     <td><span t-field="doc.amount"/></td>
                                 </tr>
                             </tbody>
                         </table>
+
+                    </div>
+                    <div>
+                        <td><span t-field="doc.amount_words"/></td>
                     </div>
 
                     <!-- Bottom section -->
-                    <div class="row">
-                        <div class="col-xs-6">
-                            <p><strong>Prepared By:</strong> <span t-field="doc.create_uid.name"/></p>
+                    <div class="row mt-5 mb-5">
+                        <div class="col-6 text-center">
+                            <p class="mb-5"><strong>Prepared By:</strong> <span t-field="doc.create_uid.name"/></p>
+                            <hr/> <!-- Horizontal line for the signature -->
                         </div>
-                        <div class="col-xs-6 ml-auto">
-                            <p><strong>Approved By:</strong> <span t-field="doc.approve_uid.name"/></p>
-                        </div>
-                        <div class="col-xs-6 ml-auto">
-                            <p><strong>Checked By:</strong> <span t-field="doc.check_uid.name"/></p>
+                        <div class="col-6 text-center">
+                            <p class="mb-5"><strong>Verified By:</strong> <span t-field="doc.approve_uid.name"/></p>
+                            <hr/> <!-- Horizontal line for the signature -->
                         </div>
                     </div>
+
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <p class="mb-5"><strong>Checked By:</strong> <span t-field="doc.check_uid.name"/></p>
+                            <hr/> <!-- Horizontal line for the signature -->
+                        </div>
+                    </div>
+
+
                 </div>
             </t>
         </t>
