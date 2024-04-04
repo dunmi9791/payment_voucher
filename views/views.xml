@@ -15,6 +15,9 @@
            <xpath expr="//button[@name='action_post']" position="replace">
                     <button name="action_post" string="Post" type="object" class="oe_highlight" attrs="{'invisible': [('state', '!=', 'cfo_approve')]}" data-hotkey="v"/>
            </xpath>
+           <xpath expr="//field[@name='partner_bank_id']" position="after">
+               <field name="narration" placeholder="Enter Description/Particulars"/>
+           </xpath>
 
        </field>
    </record>
